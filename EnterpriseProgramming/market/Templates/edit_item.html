@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+  Edit Item Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="description">
+        <h1 style="text-align: center">Update Item</h1>
+
+        <div class="form">
+            <form action="/edit_item/{{item.id}}" method="POST">
+                <p class="lead font-weight-normal">Item Name</p>
+                <input type="text" name="name" id="name" value="{{item.name}}">
+                <br>
+                <p class="lead font-weight-normal">Item Country Appeal rate</p>
+                <input type="text" name="country_appeal_rate" id="country_appeal_rate" value="{{item.country_appeal_rate}}">
+                <br>
+                <p class="lead font-weight-normal">Item Category</p>
+                <input type="text" name="category" id="category" value="{{item.category}}">
+                <br>
+                <p class="lead font-weight-normal">Item Price</p>
+                <input type="text" name="price" id="price" value="{{item.price}}">
+                <br>
+                <p class="lead font-weight-normal">Item Barcode</p>
+                <input type="text" name="barcode" id="barcode" value="{{item.barcode}}">
+                <br>
+                <p class="lead font-weight-normal">Item Description</p>
+                <input type="text" name="description" id="description" value="{{item.description}}">
+                <br>
+                <br>
+                <input type="submit" class="btn-success" value="Update">
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

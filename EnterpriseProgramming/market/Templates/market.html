@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+  Market Page
+{% endblock %}
+
+{% block content %}
+<table class="table table-hover table-dark">
+    <thead>
+       <tr>
+          <!-- Your Columns HERE -->
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Country Appeal Rate</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price</th>
+          <th scope="col">Barcode</th>
+          <th scope="col">Options</th>
+       </tr>
+    </thead>
+    <tbody>
+       <!-- Your rows inside the table HERE: -->
+       {% for item in items %}
+       {% include 'includes/items_modals.html' %}
+       <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.country_appeal_rate }}</td>
+          <td>{{ item.category }}</td>
+          <td>£{{ item.price }}</td>
+          <td>{{ item.barcode }}</td>
+          <td>
+             <a class="btn btn-outline btn-warning" href="/edit_item/{{item.id}}">Edit Info</a>
+             <a class="btn btn-outline btn-danger" href="/delete/{{item.id}}">Delete Info</a>
+             <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ item.id }}">More Info</button>
+          </td>
+       </tr>
+       {% endfor %}
+    </tbody>
+ </table>
+{% endblock %}

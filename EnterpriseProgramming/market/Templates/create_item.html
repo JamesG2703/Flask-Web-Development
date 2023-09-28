@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+  Create Item Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-item" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://repository-images.githubusercontent.com/119871947/bfe23e80-e7d0-11e9-97e0-4eec55c9f883" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Create a new item
+            </h1>
+            <br>
+            {{ form.name.label() }}
+            {{ form.name(class="form-control", placeholder="Name") }}
+
+            {{ form.country_appeal_rate.label() }}
+            {{ form.country_appeal_rate(class="form-control", placeholder="Country_appeal_rate") }}
+
+            {{ form.category.label() }}
+            {{ form.category(class="form-control", placeholder="Category") }}
+
+            {{ form.price.label() }}
+            {{ form.price(class="form-control", placeholder="Price") }}
+
+            {{ form.barcode.label() }}
+            {{ form.barcode(class="form-control", placeholder="Barcode") }}
+
+            {{ form.description.label() }}
+            {{ form.description(class="form-control", placeholder="Description") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}
